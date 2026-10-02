@@ -1,5 +1,10 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
+  <img src="assets/logo-light.svg" alt="Platnum" width="320">
+</picture>
+
 # Platnum Terminal — Desktop
 
 **TradingView-grade charts, live order books, trading bots and multi-exchange trading in one native app.**
@@ -14,9 +19,19 @@
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <a href="assets/screenshot-1.png"><img src="assets/screenshot-1.png" alt="Platnum Terminal screenshot 1" width="32%"></a>
+  <a href="assets/screenshot-2.png"><img src="assets/screenshot-2.png" alt="Platnum Terminal screenshot 2" width="32%"></a>
+  <a href="assets/screenshot-3.png"><img src="assets/screenshot-3.png" alt="Platnum Terminal screenshot 3" width="32%"></a>
+</p>
+
+<p align="center"><sub>Click a screenshot to enlarge it.</sub></p>
+
 ## About this repository
 
-This repository **distributes the installers** for Platnum Terminal. It holds release binaries and the auto-update feed, nothing else. The application source lives in a private repository.
+This repository **distributes the installers** for Platnum Terminal. It holds release binaries, the auto-update feed and the images shown on this page, nothing else. The application source lives in a private repository.
 
 The web version of the terminal is always available at [platnum.app](https://platnum.app). The desktop app runs the same terminal in a native window, adding OS integration, `platnum://` deep links and automatic updates.
 
@@ -79,6 +94,36 @@ sudo apt install ./Platnum-Terminal-linux-x64.deb
 sudo dnf install ./Platnum-Terminal-linux-x64.rpm      # Fedora, RHEL
 sudo zypper install ./Platnum-Terminal-linux-x64.rpm   # openSUSE
 ```
+
+## Docker
+
+> **Coming soon.** The container image is not published yet. These instructions go live with the first public image; until then use the installers above.
+
+Prefer to run Platnum Terminal on your own machine or a home server? The same terminal is available as a self-hosted container: it serves the web app on `http://localhost:8080`, while your account and exchange keys stay on Platnum's backend (the container holds no keys and stores nothing).
+
+**Requirements:** Docker 24 or newer with the Compose plugin, a 64-bit Intel/AMD or ARM machine, and outbound HTTPS to platnum.app and your exchanges.
+
+```bash
+# One command
+docker run -d --name platnum -p 127.0.0.1:8080:8080 --restart unless-stopped ghcr.io/mirchmag-code/platnum-terminal:stable
+```
+
+```bash
+# Or with Compose, which also gives you updates
+curl -fsSLo docker-compose.yml https://platnum.app/download/docker
+docker compose up -d
+```
+
+Open <http://localhost:8080> and sign in with your email and password.
+
+| Update | Command |
+|---|---|
+| By hand | `docker compose pull && docker compose up -d` |
+| Automatically, checked every 6 hours | `docker compose --profile autoupdate up -d` |
+
+The automatic updater needs access to the Docker socket, which is full control of Docker on that machine, so it is off unless you turn it on. The `stable` tag only moves after a release has been checked by hand. Pin a version with `PLATNUM_IMAGE=ghcr.io/mirchmag-code/platnum-terminal:<version> docker compose up -d`.
+
+By default only the machine running Docker can reach the container. To open it from another device, put HTTPS in front of it (for example a Caddy `reverse_proxy 127.0.0.1:8080`) rather than exposing the port directly.
 
 ## Verifying your download
 
