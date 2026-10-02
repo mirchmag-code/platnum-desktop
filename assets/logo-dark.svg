@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 435.5 96">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-6 {
+        fill: #34b884;
+      }
+
+      .cls-7 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-8 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-9 {
+        fill: #ee2c28;
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-3" d="M20.5,46.53c-1.24,0-2.26,1.02-2.26,2.26v7.25c0,3.75,3.03,6.78,6.78,6.78h17.6c1.24,0,2.26-1.02,2.26-2.26v-11.77c0-1.24-1.02-2.26-2.26-2.26h-22.12Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-87.29" y1="434.49" x2="-86.29" y2="434.49" gradientTransform="translate(2343.92 11631.27) scale(26.64 -26.64)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34b884"/>
+      <stop offset=".42" stop-color="#33b683"/>
+      <stop offset=".57" stop-color="#30af7f"/>
+      <stop offset=".68" stop-color="#2ca379"/>
+      <stop offset=".76" stop-color="#269270"/>
+      <stop offset=".84" stop-color="#1e7c65"/>
+      <stop offset=".9" stop-color="#146157"/>
+      <stop offset=".96" stop-color="#094147"/>
+      <stop offset="1" stop-color="#00283a"/>
+    </linearGradient>
+    <clipPath id="clippath-1">
+      <path class="cls-3" d="M6.78.05C3.03.05,0,3.07,0,6.82v7.21c0,1.24,1.04,2.28,2.31,2.28h40.25c1.29,0,2.31-1.04,2.31-2.3V2.35c0-1.29-1.04-2.3-2.31-2.3H6.78Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="-87.27" y1="438.76" x2="-86.27" y2="438.76" gradientTransform="translate(3914.9 19690.29) scale(44.86 -44.86)" xlink:href="#linear-gradient"/>
+    <clipPath id="clippath-2">
+      <rect class="cls-3" width="435.5" height="96"/>
+    </clipPath>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-8">
+      <rect class="cls-7" x="18.24" y="46.53" width="26.64" height="16.29"/>
+    </g>
+    <g class="cls-4">
+      <rect class="cls-1" x="0" y=".05" width="44.86" height="16.27"/>
+    </g>
+    <g class="cls-5">
+      <path class="cls-6" d="M62.85,62.94v33.06h-20.11V0h31.5C96.75,0,108,10.19,108,30.6c0,9.65-3.23,17.45-9.7,23.39-6.44,5.97-15.07,8.95-25.88,8.95h-9.58ZM64.34,16.61v29.92h8.5c11.5,0,17.27-5.04,17.27-15.12s-5.76-14.8-17.27-14.8h-8.5Z"/>
+      <path class="cls-2" d="M122.12,23.63h10.94v51.87h-10.94V23.63ZM127,66.08h34.03v9.42h-34.03v-9.42Z"/>
+      <polygon class="cls-2" points="188.89 23.63 195.84 23.63 218.05 75.5 206.26 75.5 192.36 40.08 178.46 75.5 166.68 75.5 188.89 23.63"/>
+      <path class="cls-2" d="M218.11,23.63h42.58v9.42h-42.58v-9.42ZM233.92,27.88h10.95v47.62h-10.95V27.88Z"/>
+      <polygon class="cls-2" points="269.53 23.63 282.92 23.63 304.53 63.37 303.57 64.3 303.57 23.63 314.03 23.63 314.03 75.47 300.57 75.47 279.04 36.33 280 35.4 280 75.47 269.53 75.47 269.53 23.63"/>
+      <path class="cls-2" d="M338.18,73.77c-3.17-1.51-5.58-3.71-7.23-6.6-1.65-2.89-2.48-6.37-2.48-10.43V23.63h10.94v33.35c0,2.97.89,5.28,2.68,6.92,1.78,1.64,4.3,2.46,7.55,2.46s5.81-.82,7.61-2.46c1.8-1.64,2.7-3.95,2.7-6.92V23.63h10.95v33.1c0,4.07-.83,7.55-2.5,10.43-1.67,2.89-4.09,5.09-7.27,6.6-3.18,1.51-7.01,2.27-11.48,2.27s-8.3-.75-11.46-2.27"/>
+      <polygon class="cls-2" points="421.08 23.63 435.5 23.63 435.5 75.5 425.55 75.5 425.55 35.23 425.95 37.51 414.85 69.72 405.18 69.72 394.08 38.22 394.48 35.23 394.48 75.5 384.53 75.5 384.53 23.63 398.95 23.63 410.02 58.59 421.08 23.63"/>
+      <polygon class="cls-6" points="198.76 81.15 192.36 64.49 185.92 81.15 198.76 81.15"/>
+      <polygon class="cls-9" points="403.59 17.96 409.99 34.63 416.44 17.96 403.59 17.96"/>
+    </g>
+  </g>
+</svg>
