@@ -49,7 +49,7 @@ Pick the installer for your system. These links always resolve to the newest pub
 | **Linux**: Fedora / RHEL / openSUSE | x64 | `.rpm` | [Platnum-Terminal-linux-x64.rpm](https://github.com/mirchmag-code/platnum-desktop/releases/latest/download/Platnum-Terminal-linux-x64.rpm) |
 
 Shortcut URLs that redirect to the same files:
-`platnum.app/download/windows` · `/download/mac` · `/download/mac-intel` · `/download/linux` · `/download/linux/deb` · `/download/linux/rpm`
+`platnum.app/download/windows` · `/download/mac` · `/download/mac-intel` · `/download/linux` · `/download/linux/deb` · `/download/linux/rpm` · `/download/docker` (the Compose file)
 
 Installer file names carry no version number, so the links above never go stale. The version is shown on each [release page](https://github.com/mirchmag-code/platnum-desktop/releases).
 
@@ -97,11 +97,9 @@ sudo zypper install ./Platnum-Terminal-linux-x64.rpm   # openSUSE
 
 ## Docker
 
-> **Coming soon.** The container image is not published yet. These instructions go live with the first public image; until then use the installers above.
-
 Prefer to run Platnum Terminal on your own machine or a home server? The same terminal is available as a self-hosted container: it serves the web app on `http://localhost:8080`, while your account and exchange keys stay on Platnum's backend (the container holds no keys and stores nothing).
 
-**Requirements:** Docker 24 or newer with the Compose plugin, a 64-bit Intel/AMD or ARM machine, and outbound HTTPS to platnum.app and your exchanges.
+**Requirements:** Docker 24 or newer with the Compose plugin, a 64-bit Intel/AMD or ARM machine, and outbound HTTPS to platnum.app and your exchanges. Images are published for `amd64` and `arm64`.
 
 ```bash
 # One command
@@ -124,6 +122,26 @@ Open <http://localhost:8080> and sign in with your email and password.
 The automatic updater needs access to the Docker socket, which is full control of Docker on that machine, so it is off unless you turn it on. The `stable` tag only moves after a release has been checked by hand. Pin a version with `PLATNUM_IMAGE=ghcr.io/mirchmag-code/platnum-terminal:<version> docker compose up -d`.
 
 By default only the machine running Docker can reach the container. To open it from another device, put HTTPS in front of it (for example a Caddy `reverse_proxy 127.0.0.1:8080`) rather than exposing the port directly.
+
+**What works in the container**
+
+| | |
+|---|---|
+| Email and password sign-in | Works on any address |
+| Google or X sign-in | Only on `http://localhost:8080`, and only once Platnum has allowed that address for sign-in |
+| Charts, order book, paper bots | Work |
+| Live orders | Work; they go through Platnum's backend exactly as on platnum.app |
+| Push notifications | Only on `localhost` or behind HTTPS |
+| Bots running with the browser closed | Not yet; planned for the container |
+
+**Docker troubleshooting**
+
+- **The page doesn't load:** `docker compose ps` should say `healthy`; `docker compose logs platnum` shows one line per request.
+- **"Port is already allocated":** something else uses 8080. Change the left number, for example `"127.0.0.1:9090:8080"` (Google and X sign-in won't work on another port).
+- **Everything under `/api/` answers 502:** the container can't reach platnum.app. Check the machine's internet and DNS, then [status.platnum.app](https://status.platnum.app).
+- **A blank page after an update:** reload once; the old tab was asking for files the new version no longer has.
+- **Pinned a version but it moved back:** stop the updater first (`docker compose stop autoupdate`), or it returns you to `stable` at its next check.
+- **Stop and remove:** `docker compose down`.
 
 ## Verifying your download
 
